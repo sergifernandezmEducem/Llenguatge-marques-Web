@@ -1,0 +1,245 @@
+/* ===== Reset básico ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ===== Variables de color ===== */
+:root {
+    --orange: #e8603c;
+    --orange-logo: #f15b2a;
+    --grey: #8a8a8a;
+    --dark: #333;
+}
+
+/* ===== Header ===== */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+}
+
+.logo img {
+    width: 30px;
+}
+
+.nav__list {
+    display: none; /* en móvil se oculta; se muestra en escritorio */
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-button img {
+    width: 24px;
+}
+
+/* ===== Hero ===== */
+.hero {
+    position: relative;
+    min-height: 60vh;
+    background-image: url("../img/first-background.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero__content {
+    position: relative;
+    padding: 2rem 1.5rem;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.hero__subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--orange);
+    color: #fff;
+    padding: 0.7rem 1.8rem;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+/* ===== Features ===== */
+.features {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.features__title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+}
+
+.features__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.feature__icon {
+    width: 110px;
+    margin: 0 auto 1rem;
+}
+
+.feature__title {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* ===== Footer ===== */
+.footer {
+    border-top: 1px solid #eee;
+    margin: 0 1.5rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer__text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.social__link img {
+    width: 16px;
+}
+
+.footer__copy {
+    font-size: 0.8rem;
+    color: var(--grey);
+}
+
+/* ===== Escritorio (768px o más) ===== */
+@media (min-width: 768px) {
+
+    .menu-button {
+        display: none; /* ocultamos el hamburguesa */
+    }
+
+    .header__inner {
+        padding: 1rem 3rem;
+    }
+
+    .nav__list {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav__link {
+        color: var(--grey);
+        font-size: 0.95rem;
+    }
+
+    .nav__link--active {
+        color: var(--dark);
+        font-weight: 700;
+    }
+
+    .nav__link:hover {
+        color: var(--orange);
+    }
+
+    .logo img {
+        width: 36px;
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero__title {
+        font-size: 3.2rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.4rem;
+    }
+
+    .features__title {
+        font-size: 2.2rem;
+    }
+
+    .features__grid {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .feature {
+        flex: 1;
+    }
+
+    .footer {
+        margin: 0 3rem;
+    }
+}
